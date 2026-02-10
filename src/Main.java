@@ -27,10 +27,30 @@ public class Main {
 
                 case 1:
                     // TODO: Read input and add Book
+                    System.out.println("Book title");
+                    String title = scanner.nextLine();
+                    System.out.println("Book author");
+                    String author = scanner.nextLine();
+                    System.out.println("Book year");
+                    int year = scanner.nextInt();
+                    scanner.nextLine();
+                    Book book = new Book(title, author, year);
+                    library.addBook(book);
                     break;
 
                 case 2:
                     // TODO: Read input and add EBook
+                    System.out.println("Book title");
+                    String etitle = scanner.nextLine();
+                    System.out.println("Book author");
+                    String eauthor = scanner.nextLine();
+                    System.out.println("Book year");
+                    int eyear = scanner.nextInt();
+                    System.out.println("Book file size");
+                    int filesize = scanner.nextInt();
+                    scanner.nextLine();
+                    EBook ebook = new EBook(etitle, eauthor, eyear, filesize);
+                    library.addBook(ebook);
                     break;
 
                 case 3:
@@ -39,18 +59,27 @@ public class Main {
 
                 case 4:
                     // TODO: Search book
+                    System.out.println("Enter book title");
+                    String stitle = scanner.nextLine();
+                    System.out.println(library.searchByTitle(stitle));
                     break;
 
                 case 5:
                     // TODO: Borrow book
+                    System.out.println("Enter book title");
+                    String btitle = scanner.nextLine();
+                    library.borrowBook(btitle);
                     break;
 
                 case 6:
                     // TODO: Return book
+                    System.out.println("Enter book title");
+                    String rtitle = scanner.nextLine();
+                    library.returnBook(rtitle);
                     break;
 
                 case 7:
-                    System.out.println("Goodbye!");
+                    System.out.println("Goodbye");
                     break;
 
                 default:
